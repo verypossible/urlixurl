@@ -12,10 +12,21 @@ defmodule Urlixurl.Mixfile do
         flags: ["-Wunmatched_returns", :error_handling, :race_conditions, :underspecs],
         plt_add_deps: :transitive,
       ],
-    deps: deps()
-  ]
+    deps: deps(),
+    description: """
+    Splits a url into semantically useful representations of itself.
+    """,
+    package: package(),
+    ]
   end
 
+  defp package do
+    [
+      maintainers: ["Jeff McGehee", "Michael Simpson"],
+      licenses: ["MIT"],
+      links: %{github: "https://github.com/spartansystems/urlixurl"},
+     ]
+  end
   # Configuration for the OTP application
   #
   # Type "mix help compile.app" for more information
@@ -29,6 +40,7 @@ defmodule Urlixurl.Mixfile do
     [
       {:dialyxir, "~> 0.5", only: :dev, runtime: false},
       {:credo, "~> 0.5", only: :dev},
+      {:ex_doc, ">= 0.0.0", only: :dev},
     ]
   end
 end
